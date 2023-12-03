@@ -10,7 +10,7 @@ ifeq ("${PART2}", "")
 else
 	FILENAME=part2.py
 endif
-# $(eval URL:=https://adventofcode.com/${YEAR}/day/${DAY}/input)
+
 .PHONY: solve, test, part2, solve2, test2, solve1, solve2
 test:
 	./${FILENAME} test.txt
@@ -30,6 +30,6 @@ part2.py:
 	chmod a+x part2.py
 	code -r part2.py
 input.txt:
-	$(eval URL:=https://adventofcode.com/2023/day/${DAY}/input)
+	$(eval URL:=https://adventofcode.com/${YEAR}/day/${DAY}/input)
 	@echo curling ${URL} with ${COOKIE}
 	@curl -s --cookie "${COOKIE}" ${URL} > input.txt

@@ -12,6 +12,8 @@ start_time = time.perf_counter()
 
 with open(input_file_name) as fh:
     lines = [line.strip() for line in fh.readlines()]
+    for line in lines:
+        ...
 
 
 print(f"Elapsed time: {time.perf_counter() - start_time} s")
