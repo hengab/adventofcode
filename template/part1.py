@@ -3,9 +3,14 @@
 import sys
 import time
 import typing as typ
+import logging
+
+logging.basicConfig(format="%(message)s", level=logging.DEBUG)
+
+logger = logging.getLogger(__name__)
 
 input_file_name = sys.argv[1] if len(sys.argv) > 1 else "input.txt"
-print("--------Part 1--------")
+logger.info("--------Part 1--------")
 
 start_time = time.perf_counter()
 
@@ -16,4 +21,4 @@ with open(input_file_name) as fh:
         ...
 
 
-print(f"Elapsed time: {time.perf_counter() - start_time} s")
+logger.info(f"Elapsed time: {time.perf_counter() - start_time} s")
